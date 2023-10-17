@@ -21,8 +21,8 @@ commentElement.textContent = "👍";
 GM_setValue("emojiReaction", commentElement);
 
 document.addEventListener("keydown", function (key) {
-	
-	
+	var buttonbg = document.getElementById("bgColorButton");
+
 	if (key.altKey && key.code === "KeyS") {
 		// Get the comment element from the Tampermonkey storage
 		var commentElement = GM_getValue("emojiReaction");
@@ -33,11 +33,9 @@ document.addEventListener("keydown", function (key) {
 			document.querySelector(".docs-editor-container").appendChild(commentElement);
 		}
 	}
-  
-	// hl neon green
-	if (key.altKey  &&  key.code === "KeyG") {
-		var buttonbg = document.getElementById("bgColorButton");
 
+	// hl neon green
+	if (key.altKey && key.code === "KeyG") {
 		callMouseEvent(buttonbg);
 		setTimeout(function(){
 			var color_choice = document.getElementById("docs-material-colorpalette-cell-104");
@@ -45,11 +43,9 @@ document.addEventListener("keydown", function (key) {
 			callMouseEvent(color_choice);
 		}, 1);
 	}
-	
+
 	// Remove BG color--no idea why it needs two callMouseEvents
 	if (key.altKey && key.code === "KeyR") {
-		var buttonbg = document.getElementById("bgColorButton");
-
 		callMouseEvent(buttonbg);
 		setTimeout(function(){
 			var color_choice = document.getElementsByClassName("goog-menuitem colormenuitems-no-color")[0];
@@ -58,7 +54,6 @@ document.addEventListener("keydown", function (key) {
 			callMouseEvent(color_choice);
 		}, 1);
 	}
-  
 });
 
 //call each mouse event
@@ -70,7 +65,7 @@ function callMouseEvent(button){
 
 // send mouse even
 function triggerMouseEvent (node, eventType) {
-    var eventObj        = document.createEvent('MouseEvents');
+    var eventObj = document.createEvent('MouseEvents');
     eventObj.initEvent (eventType, true, true);
-    node.dispatchEvent   (eventObj);
+    node.dispatchEvent (eventObj);
 }
