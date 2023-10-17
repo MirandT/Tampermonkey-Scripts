@@ -12,19 +12,19 @@
 // @grant GM_registerMenuCommand
 // ==/UserScript==
 
-console.log('ok, tamper started!');
-
-// Create a new comment element
-var commentElement = document.createElement("div");
-commentElement.className = "docs-comment docs-reaction";
-commentElement.textContent = "👍";
-
-// Store the comment element in the Tampermonkey storage
-GM_setValue("emojiReaction", commentElement);
+console.log('ok, tamper started!')
 
 document.addEventListener("keydown", function (key) {
 	var buttonbg = document.getElementById("bgColorButton");
-
+	
+	// Create a new comment element
+	var commentElement = document.createElement("div");
+	commentElement.className = "docs-comment docs-reaction";
+	commentElement.textContent = "👍";
+	
+	// Store the comment element in the Tampermonkey storage
+	GM_setValue("emojiReaction", commentElement);
+	
 	if (key.altKey && key.code === "KeyS") {
 		// Get the comment element from the Tampermonkey storage
 		var commentElement = GM_getValue("emojiReaction");
