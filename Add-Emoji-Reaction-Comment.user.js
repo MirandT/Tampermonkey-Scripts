@@ -6,6 +6,8 @@
 // @author       You
 // @match        https://*docs.google.*/document/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @updateURL	 https://github.com/MirandT/Tampermonkey-Scripts/edit/raw/main/Add-Emoji-Reaction-Comment.user.js
+// @downloadURL	 https://github.com/MirandT/Tampermonkey-Scripts/edit/raw/main/Add-Emoji-Reaction-Comment.user.js
 // @grant GM_setValue
 // @grant GM_registerMenuCommand
 // ==/UserScript==
