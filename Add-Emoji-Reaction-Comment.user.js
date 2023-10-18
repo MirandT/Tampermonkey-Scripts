@@ -27,12 +27,12 @@ document.addEventListener("keydown", function (key) {
 	
 	if (key.altKey && key.code === "KeyS") {
 		// Get the comment element from the Tampermonkey storage
-		var commentElement = GM_getValue("emojiReaction");
+		var getCommentElement = GM_getValue("emojiReaction");
 
 		// Check if the comment element exists and the document is fully loaded
-		if (commentElement && document.readyState === "complete") {
+		if (getCommentElement && document.readyState === "complete") {
 			// Inject the comment element into the document
-			document.querySelector(".docs-editor-container").appendChild(commentElement);
+			document.querySelector(".docs-editor-container").appendChild(getCommentElement);
 		}
 	}
 
