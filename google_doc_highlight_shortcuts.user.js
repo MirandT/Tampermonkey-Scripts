@@ -1,20 +1,21 @@
 // ==UserScript==
 // @name        Google Doc Highlight Shortcuts
 // @namespace   google_doc_highlight_shortcuts
+// @description	New highlighter structure
 // @version     1.0
 // @author      Me
-// @include     https://*docs.google.*/document/*
-// @require     http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
-// @grant    GM_addStyle
+// @match	https://*docs.google.*/document/*
+// @grant       GM_setValue
+// @grant       GM_getValue
 // ==/UserScript==
 
 console.log('Script Google Doc Highlight Shortcuts Started!');
 
 document.addEventListener("keydown", function (key) {
 	if (key.ctrlKey) {
-        return;
-    }
-    
+	        return;
+	}
+
 	// Create a new comment element
 	var commentElement = document.createElement("div");
 	commentElement.className = "docs-comment docs-reaction";
@@ -29,7 +30,7 @@ document.addEventListener("keydown", function (key) {
 	callMouseEvent(document.getElementById("bgColorButton"));
 	// Allow process time to click highlighter button
 	setTimeout(function(){
-		switch (key.altKey  &&  key.code) {
+		switch (key.altKey && key.code) {
 			case "KeyL":
 				// Select light cornflower blue 3 color
 				callMouseEvent(document.getElementById("docs-material-colorpalette-cell-116"));
